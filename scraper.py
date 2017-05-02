@@ -9,10 +9,10 @@ html = scraperwiki.scrape("https://www.pornhub.com/playlists?page=16")
 #
 # # Find something on the page using css selectors
 root = lxml.html.fromstring(html)
-root.cssselect("ul.videos")
+root.cssselect("div.largeThumb ")
 #
 # # Write out to the sqlite database using scraperwiki library
-scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "occupation": "software developer"})
+scraperwiki.sqlite.save(unique_keys=['name'], data={"name": "susan", "src": "src"})
 #
 # # An arbitrary query against the database
 scraperwiki.sql.select("* from data where 'name'='peter'")
